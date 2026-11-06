@@ -1,0 +1,12 @@
+{
+  "name": "@luolin-ck/skills-cli",
+  "version": "0.1.0",
+  "description": "Install, update, remove and invoke registered skills with Codex or Claude Code.",
+  "type": "module",
+  "bin": { "ck-skills": "bin/ck-skills.js" },
+  "engines": { "node": ">=22" },
+  "files": ["bin/", "src/", "catalog.json", "README.md", "README.zh-CN.md", "MAINTENANCE.md", "MAINTENANCE.zh-CN.md", "CHANGELOG.md", "CHANGELOG.zh-CN.md", "changes/", "LICENSE"],
+  "scripts": { "test": "node --test test/*.test.js" },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/luolin-ck/skills-cli.git" }
+}

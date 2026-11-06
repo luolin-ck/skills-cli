@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "previous_version": null,
+  "released_on": "2026-11-06",
+  "changes": [
+    "Initial five-command CLI with user/project Codex/Claude scopes",
+    "Immutable stable Git source and exact public manifest validation",
+    "Sidecar ownership, locks, journal/backups and rollback",
+    "Known local same-name conflict checks and safe literal host invocation",
+    "Claude omitted-name compatibility and normal host-interruption cleanup",
+    "Bilingual version, maintenance and recovery documentation"
+  ],
+  "acceptance": [
+    "A later fixture tag changes the installed version/content",
+    "Unowned, modified, unsafe or corrupt targets remain untouched",
+    "Normal rollback and real interrupted-process recovery evidence",
+    "Both mock hosts receive one literal prompt and correct exit/signal behavior",
+    "Installable npm package without runtime dependencies/install hooks"
+  ],
+  "red_cases": [
+    {
+      "case": "requested project SKILL.md missing after no-op install",
+      "recorded_at": "2026-11-06T08:49:56.158105+00:00",
+      "command": "node --test test/lifecycle.test.js",
+      "expected_exit": 0,
+      "actual_exit": 1
+    },
+    {
+      "case": "unrelated valid Claude omitted-name skill blocked use",
+      "recorded_at": "2026-11-06T09:11:31.080232+00:00",
+      "command": "node --test --test-name-pattern \"Claude description-only\" test/manager.test.js",
+      "expected_exit": 0,
+      "actual_exit": 1
+    },
+    {
+      "case": "normal process-group SIGINT left a manager lock",
+      "recorded_at": "2026-11-06T09:25:20.513039+00:00",
+      "command": "node --test --test-name-pattern \"normal process-group\" test/manager.test.js",
+      "expected_exit": 0,
+      "actual_exit": 1
+    }
+  ],
+  "green": {
+    "recorded_at": "2026-11-06T09:34:22.727117+00:00",
+    "command": "npm test",
+    "actual_exit": 0,
+    "tests": 28,
+    "passed": 28,
+    "failed": 0,
+    "runtime": "Node 24.22.2, macOS arm64"
+  },
+  "public_source_smoke": {
+    "version": "1.0.0",
+    "commit": "ff865ac7117b0427eb57ee1ac0af6cea3a0dd577",
+    "files": 190,
+    "install_update_list_uninstall": "passed in temporary project",
+    "independent_offline_validator": "passed only after exact previously reviewed commit assertion"
+  },
+  "limits": [
+    "No paid/live model activation or classification benchmark",
+    "Linux/native Windows not verified; native Windows rejected",
+    "Manual recovery after forced interruption; no power-failure guarantee",
+    "No hostile same-user filesystem sandbox or universal host-source enumeration",
+    "TLS/commit/manifest do not prove publisher safety or grant content rights"
+  ]
+}
